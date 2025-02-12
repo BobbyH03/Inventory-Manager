@@ -54,6 +54,6 @@ public class MainScreenControllerr {
     }
     @GetMapping("/about")
     public String about() {
-        return "about"; // about.html page reference
+        return "about";
     }
 }
