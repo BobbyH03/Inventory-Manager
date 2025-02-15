@@ -15,7 +15,10 @@ E.  Add a sample inventory appropriate for your chosen store to the application.
 file: BootStrapData.java lines: 47-107. added 5 in house parts as well as 5 products. Also made sure that the list of parts and projects weren't duplicated and were reset each time the app is ran.
 
 F.  Add a “Buy Now” button to your product list  
-
+Created two new html templates, confirmationbuyproduct and errorbuyproduct to display message if purchase is successful or not  
+file: mainscreen.html, lines: 85-86. added Buy Now button that asks to confirm purchase and links to /buyproduct  
+file: Product.java, lines: 108-115. added a method to check inventory for product and then delete 1 of said product if purchased  
+file: AddProductController.jave, lines: 177-188. added mapping to /buyproduct that uses productID to check if the product can be purchased. which returns either html template to display purchase status
 
 G.  Modify the parts to track maximum and minimum inventory  
 
