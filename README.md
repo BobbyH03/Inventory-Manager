@@ -21,7 +21,11 @@ file: Product.java, lines: 108-115. added a method to check inventory for produc
 file: AddProductController.jave, lines: 177-188. added mapping to /buyproduct that uses productID to check if the product can be purchased. which returns either html template to display purchase status
 
 G.  Modify the parts to track maximum and minimum inventory  
-
+file: mainscreen.html, Lines: 38-39 48-49. added minimum and maximum fields  
+file: Part.java, lines: 38-38 122-126. File: InhousePart.java and OutsourcedPart.java, lines: 18-19. modified sample inventory to include min and max fields as well as added a default min and max for each part  
+file: InhousePartForm.html, lines: 25-35. file: OutsourcedPartForm.html, lines: 25-27. added additional text inputs so the user can set min and max values  
+file: application.properties, line 6. renamed the file the persistent storage is saved to
+file: Part.java, lines: 100-106. file: InhousePartServiceImpl.java, line: 54 and OutsourcedPartForm.java, line: 52. added a method to make sure the inventory is between min and max values
 
 H.  Add validation for between or at the maximum and minimum fields.  
 
