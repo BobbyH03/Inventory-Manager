@@ -49,7 +49,7 @@ public class BootStrapData implements CommandLineRunner {
         if (partRepository.count() == 0) {
             InhousePart part1 = new InhousePart();
             part1.setName("Ram");
-            part1.setInv(15);
+            part1.setInv(10);
             part1.setPrice(60.0);
             part1.setId(1);
             inhousePartRepository.save(part1);
@@ -57,14 +57,14 @@ public class BootStrapData implements CommandLineRunner {
 
             InhousePart part2 = new InhousePart();
             part2.setName("GPU");
-            part2.setInv(5);
+            part2.setInv(10);
             part2.setPrice(500.0);
             part2.setId(2);
             inhousePartRepository.save(part2);
 
             InhousePart part3 = new InhousePart();
             part3.setName("CPU");
-            part3.setInv(8);
+            part3.setInv(10);
             part3.setPrice(300.0);
             part3.setId(3);
             inhousePartRepository.save(part3);
@@ -78,7 +78,7 @@ public class BootStrapData implements CommandLineRunner {
 
             InhousePart part5 = new InhousePart();
             part5.setName("Motherboard");
-            part5.setInv(5);
+            part5.setInv(10);
             part5.setPrice(150.0);
             part5.setId(5);
             inhousePartRepository.save(part5);

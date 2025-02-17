@@ -28,7 +28,10 @@ file: application.properties, line 6. renamed the file the persistent storage is
 file: Part.java, lines: 100-106. file: InhousePartServiceImpl.java, line: 54 and OutsourcedPartForm.java, line: 52. added a method to make sure the inventory is between min and max values
 
 H.  Add validation for between or at the maximum and minimum fields.  
-
+Created 4 new files. ValidMinimum.java, ValidMaximum.java, MinimumValidator.java, and MaximumValidator.java. These files are used to display an error message for when part is above the maximum or below the minimum.  
+file: Part.java, lines: 4-5 and 23-24. imported validators  
+file: EnufPartsValidator.java, lines: 37-39. displays a message if parts are lower than products  
+file: OutsourcedPartForm.html, lines: 31-33. checks for errors and displays them
 
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.  
 
