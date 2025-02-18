@@ -34,6 +34,6 @@ file: EnufPartsValidator.java, lines: 37-39. displays a message if parts are low
 file: OutsourcedPartForm.html, lines: 31-33. checks for errors and displays them
 
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.  
-
+file: PartTest.java, lines: 160-176. added two test
 
 J.  Remove the class files for any unused validators in order to clean your code.
