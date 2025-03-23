@@ -1,4 +1,5 @@
 
+Can be visited at http://192.168.40.162:8080/mainscreen
 
 # WESTERN GOVERNORS UNIVERSITY 
 ## D287 – JAVA FRAMEWORKS
