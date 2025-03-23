@@ -1,42 +1,58 @@
 
-Can be visited at http://192.168.40.162:8080/mainscreen
+# Inventory Manager
 
-# WESTERN GOVERNORS UNIVERSITY 
-## D287 – JAVA FRAMEWORKS
-C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.  
-File: mainscreen.html, Line: 14. changed title tag to customers store name  
-File: mainscreen.html, Line: 19. changed h1 header to Performance PCs & Parts
+## Overview
+Inventory Manager is a **custom inventory management system** built using **Spring Boot and Java** for the backend, with **HTML and CSS** for the front end. It is designed for businesses that sell products composed of individual parts, helping them **track, manage, and maintain accurate inventory records**.  
 
-D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.  
-added a file named about.html to templates folder with information on company lines (12-16) as well as navigation back to the main screen line 20  
-file: mainscreen.html, line: 90. added link to about page  
-file: mainscreencontroller.java, line: 55-57. added mapping for the about page
- 
-E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.  
-file: BootStrapData.java lines: 47-107. added 5 in house parts as well as 5 products. Also made sure that the list of parts and projects weren't duplicated and were reset each time the app is ran.
+The application allows users to:  
+- **Add, update, and delete** products and parts  
+- **Enforce inventory constraints** to prevent overstocking or shortages  
+- **Process purchases** and adjust inventory levels automatically  
 
-F.  Add a “Buy Now” button to your product list  
-Created two new html templates, confirmationbuyproduct and errorbuyproduct to display message if purchase is successful or not  
-file: mainscreen.html, lines: 85-86. added Buy Now button that asks to confirm purchase and links to /buyproduct  
-file: Product.java, lines: 108-115. added a method to check inventory for product and then delete 1 of said product if purchased  
-file: AddProductController.jave, lines: 177-188. added mapping to /buyproduct that uses productID to check if the product can be purchased. which returns either html template to display purchase status
+## Features
 
-G.  Modify the parts to track maximum and minimum inventory  
-file: mainscreen.html, Lines: 38-39 48-49. added minimum and maximum fields  
-file: Part.java, lines: 38-38 122-126. File: InhousePart.java and OutsourcedPart.java, lines: 18-19. modified sample inventory to include min and max fields as well as added a default min and max for each part  
-file: InhousePartForm.html, lines: 25-35. file: OutsourcedPartForm.html, lines: 25-27. added additional text inputs so the user can set min and max values  
-file: application.properties, line 6. renamed the file the persistent storage is saved to
-file: Part.java, lines: 100-106. file: InhousePartServiceImpl.java, line: 54 and OutsourcedPartForm.java, line: 52. added a method to make sure the inventory is between min and max values
+### 1. Customizable Storefront
+- The application is customized for **Performance PCs & Parts**, a fictional store specializing in computer hardware.  
+- The **main screen** displays the store name, available products, and their associated parts.  
 
-H.  Add validation for between or at the maximum and minimum fields.  
-Created 4 new files. ValidMinimum.java, ValidMaximum.java, MinimumValidator.java, and MaximumValidator.java. These files are used to display an error message for when part is above the maximum or below the minimum.  
-file: Part.java, lines: 4-5 and 23-24. imported validators  
-file: EnufPartsValidator.java, lines: 37-39. displays a message if parts are lower than products  
-file: OutsourcedPartForm.html, lines: 31-33. checks for errors and displays them
+### 2. Product and Part Management  
+- Users can **add, edit, or remove** products and parts from the inventory.  
+- Each **product** consists of one or more **parts**, maintaining a clear relationship between components.  
+- Inventory levels are **tracked** for both products and parts, ensuring proper stock management.  
 
-I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.  
-file: PartTest.java, lines: 160-176. added two test
+### 3. Purchase System  
+- Each product has a **“Buy Now” button**, allowing customers to purchase items.  
+- When a product is purchased, its stock count is automatically reduced.  
+- If a product is out of stock, an **error message** is displayed to prevent overselling.  
 
-J.  Remove the class files for any unused validators in order to clean your code.
-file: Part.java, lines: 3, 19. removed delete part validator
-file: DeletePartValidator.java and ValidDeletePart.java. Deleted
+### 4. Inventory Constraints  
+- Parts include **minimum and maximum inventory thresholds** to prevent stock shortages or overstocking.  
+- **Validation** ensures that part inventory levels remain within the defined range.  
+
+### 5. Sample Inventory Data  
+- The application includes **preloaded inventory data** with **five products and five parts** to provide an example setup.  
+- Sample inventory is **reset every time** the application is restarted to maintain consistency during testing.  
+
+### 6. About Page  
+- A dedicated **“About” page** provides details about the store.  
+- Includes **easy navigation** between the main screen and the about section.  
+
+### 7. Input Validation and Error Handling  
+- Validation is implemented to ensure accurate inventory tracking, including:  
+  - **Preventing** products from being created with more parts than available stock.  
+  - **Restricting** inventory changes to remain within min/max constraints.  
+  - **Displaying appropriate error messages** when invalid data is entered.  
+
+### 8. Unit Testing  
+- **Two unit tests** are included to verify that **minimum and maximum inventory constraints** function correctly.  
+
+## Technology Stack  
+- **Backend:** Java, Spring Boot  
+- **Frontend:** HTML, CSS  
+- **Database:** Persistent storage with Spring JPA  
+- **Testing:** JUnit  
+
+## Future Enhancements  
+- Implement a **database-backed** persistent inventory system.  
+- Improve the **user interface** with a more modern design.  
+- Add **authentication** and role-based access for inventory management.  
