@@ -1,6 +1,5 @@
 # 🛠️ Inventory Manager
 
-🔗 **Live App:** [Inventory Manager](http://192.168.40.162:8081/mainscreen)
 
 ## 📋 Overview
 
